@@ -1,0 +1,24 @@
+.navbar{
+    background-color: blue;
+    list-style-type: none;  
+    justify-content: space-between;
+    padding:5%;
+    
+}
+.blogname{
+    font-family: fantasy;
+    font-size: xx-large;
+}
+
+.link{
+    margin-left: 2%;
+    text-decoration: none;
+    color:black;
+}
+
+li{
+    display: inline;
+}
+
+
+    
