@@ -17,7 +17,7 @@ import { IDetailPosts } from '../interface/idetailposts';
     // Dependency injection för att hämta datan som finns i service.
   
     ngOnInit(){
-      this.detailposts = this.detailpostsService.getPosts();
+      this.detailposts = this.detailpostsService.getpostsDetail();
     }
    // Här anropar jag getPost för att hämta datan och lägga in den i egenskapen för att kunna visa datan i komponenten.
 }

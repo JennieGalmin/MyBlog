@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostsService } from '../services/post.service';
+import { Post } from '../interface/post';
 
 
 
@@ -9,7 +11,10 @@ import { Component } from '@angular/core';
 })
 
 export class PostsComponent{
+constructor(private postService: PostsService){}
+// hämtar postservicen
 
-
-
+getPost(): Post[] {
+  return this.postService.getPost();
+}
 }
