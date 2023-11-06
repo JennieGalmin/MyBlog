@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-like',
@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class LikeComponent {
 
-likes: number = 0;
-dislikes: number =0;
+@Input() likes: number = 0;
+@Input() dislikes: number =0;
 
 likeButtonClick(){
 this.likes++;

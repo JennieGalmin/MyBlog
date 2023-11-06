@@ -8,8 +8,8 @@ import { IDetailPosts } from "../interface/idetailposts";
 })
 
 export class DetailpostsService {
-public detailposts: IDetailPosts[] = [];
-
+private detailposts: IDetailPosts[] = [];
+// En private detailposts som tar in IdetailPosts interfacet och deklarerar en tom array. 
   constructor() { }
 
  getPosts(){
