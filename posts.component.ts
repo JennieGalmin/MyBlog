@@ -10,11 +10,4 @@ import { Post } from '../interface/post';
   styleUrls: ['./posts.component.css']
 })
 
-export class PostsComponent{
-constructor(private postService: PostsService){}
-// hämtar postservicen
-
-getPost(): Post[] {
-  return this.postService.getPost();
-}
-}
+export class PostsComponent{}

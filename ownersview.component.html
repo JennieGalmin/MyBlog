@@ -1,1 +1,16 @@
-<p>ownersview works!</p>
+<form (ngSubmit)="addPostDetail()">
+    <label for="newTitle">Title</label>
+    <input type="text" id="newTitle" [(ngModel)]="newTitle" name="newTitle">
+    <label for="newImage">Image</label>
+    <input type="text" id="newImage" [(ngModel)]="newImage" name="newImage">
+    <label for="newBody">Body</label>
+    <input type="text" id="newBody" [(ngModel)]="newBody" name="newBody">
+    <button type="submit">Add Post</button>
+</form>
+<ul>
+    <li *ngFor="let newPost of getpostsDetail()">
+    <h1>{{ newPost.title }}</h1>
+    <p>{{ newPost.thumbnailUrl }}</p>
+    <p>{{ newPost.body }}</p>
+    </li>
+</ul>
