@@ -1,17 +1,9 @@
-<p>Home</p>
-<!--<h1>Inlägg</h1>
+<h1>Alla inlägg</h1>
 
-<form (ngSubmit)="addPost(newTitle.value, newImage.value)">
-    <label for="newTitle">Title</label>
-    <input type="text" id="newTitle" #newTitle>
-    <label for="newImage">Image</label>
-    <input type="text" id="newImage" #newImage>
-
-    <button type="submit">Add Post</button>
-</form>
 <ul>
-    <li *ngFor="let post of getPost()">
-{{post.title}}
-{{post.image}}
+    <li *ngFor="let post of posts">
+<p>{{post.id}}</p>
+<p>{{post.title}}</p>
+<p>{{post.image}}</p>
     </li>
-</ul>-->
+</ul>

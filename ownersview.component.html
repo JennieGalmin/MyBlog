@@ -6,11 +6,14 @@
     <label for="newBody">Body</label>
     <input type="text" id="newBody" [(ngModel)]="newBody" name="newBody">
     <button type="submit">Add Post</button>
+
 </form>
 <ul>
     <li *ngFor="let newPost of getpostsDetail()">
     <h1>{{ newPost.title }}</h1>
     <p>{{ newPost.thumbnailUrl }}</p>
     <p>{{ newPost.body }}</p>
+    <P>{{ newPost.creationDate }}</P>
+    <app-like [likes]="likes" [dislikes]="dislikes"></app-like>
     </li>
 </ul>

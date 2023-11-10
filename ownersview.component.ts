@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DetailpostsService } from '../services/detailposts.service';
 import { IDetailPosts } from '../interface/idetailposts';
+ 
 
 
 
@@ -12,11 +13,14 @@ import { IDetailPosts } from '../interface/idetailposts';
 
 export class OwnersviewComponent {
 constructor(private detailpostService: DetailpostsService){}
-// Hämtar postservicen
+
 
 newTitle: string = '';
 newImage: string = '';
 newBody: string = '';
+likes: number = 0;
+dislikes: number = 0;
+comments: [] = [];
 
 addPostDetail(): void{
   const newPost: IDetailPosts = {
