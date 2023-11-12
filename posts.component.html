@@ -1,9 +1,10 @@
 <h1>Alla inlägg</h1>
-
+<div routerLink="/postdetail">
 <ul>
     <li *ngFor="let post of posts">
-<p>{{post.id}}</p>
+
 <p>{{post.title}}</p>
 <p>{{post.image}}</p>
     </li>
 </ul>
+</div>

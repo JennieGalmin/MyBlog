@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { DetailpostsService } from '../services/detailposts.service';
 import { IDetailPosts } from '../interface/idetailposts';
  
-
-
-
 @Component({
   selector: 'app-ownersview',
   templateUrl: './ownersview.component.html',
@@ -24,6 +21,7 @@ comments: [] = [];
 
 addPostDetail(): void{
   const newPost: IDetailPosts = {
+  id: 0,
   title: this.newTitle,
   thumbnailUrl: this.newImage,
   body: this.newBody,

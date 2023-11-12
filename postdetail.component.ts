@@ -1,23 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import  { DetailpostsService } from '../services/detailposts.service'
+import { Comment } from '../interface/comment'
+import { DetailpostsService } from '../services/detailposts.service'
+import { CommentService } from '../services/comment.service';
 import { IDetailPosts } from '../interface/idetailposts';
 
 @Component({
   selector: 'app-postdetail',
   templateUrl: './postdetail.component.html',
-  styleUrls: ['./postdetail.component.css']
+  styleUrls: ['./postdetail.component.css'],
+ 
 })
 
   export class PostdetailComponent implements OnInit {
-
     public detailposts: IDetailPosts[] = [];
     // Deklarerar detailposts som en array som följer samma struktur som intefacet. 
+    newComment: string = '';
+    likes: number = 0; 
+    dislikes: number = 0;
+
   
-    constructor(public detailpostsService : DetailpostsService) {}
+    constructor(
+      public detailpostsService : DetailpostsService,
+      private commentService: CommentService 
+      ) {}
     // Dependency injection för att hämta datan som finns i service.
   
-    ngOnInit(){
-      this.detailposts = this.detailpostsService.getpostsDetail();
+    ngOnInit(): void {
+      this.detailposts = this.detailpostsService.getpostsDetail()
     }
-   // Här anropar jag getPost för att hämta datan och lägga in den i egenskapen för att kunna visa datan i komponenten.
-}
+
+    addComment(post: IDetailPosts): void{
+      this.commentService.addComment(post, this.newComment)
+      this.newComment = '';
+    }
+ 
+    getCommentByPost(postId: number): Comment[]{
+      return this.commentService.getCommentByPost(postId)
+    }
+
+  }

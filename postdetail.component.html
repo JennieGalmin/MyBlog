@@ -1,4 +1,21 @@
-<div *ngFor="let post of detailposts">
-    {{post.title}}<br>
-    {{post.body}}
+<div>
+    <ul *ngFor="let post of detailposts">
+        <li>
+          <p>{{post.title}}</p>  
+          <p>{{post.body}}</p>
+          <p>{{post.thumbnailUrl}}</p>
+          <p>{{post.creationDate}}</p>
+          <app-like [likes]="likes" [dislikes]="dislikes"></app-like>
+    
+          <form (ngSubmit)="addComment(post)">
+              <input type="text" id="newComment" [(ngModel)]="newComment" name="newComment">
+          </form>
+          <ul>
+            <li *ngFor="let comment of getCommentByPost(post.id)">
+              <p>{{comment.body}}</p>
+            </li>
+          </ul>
+        </li>
+    </ul>
+    
 </div>
